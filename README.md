@@ -1,6 +1,9 @@
 # Pixel2Photon
 Resources for Touch Collective Melbourne/ Altar Space, 2025 Pixel2Photon Workshop
+
 *being activley updated before workshop*
+16/02/2025: I'll get put some resources here to make sure we can make the most of the hour workshop <3
+
 Simulated Real-Time Lighting Control: TouchDesigner & Unreal Engine (now kith)
 
 This project demonstrates the integration of TouchDesigner and Unreal Engine for virtual lighting simulation and remote control. It provides a bascic framework for bridging a a touchdesigner programming and control interface with a high-fidelity virtual production environment in unreal engine to facilitate pre-visualization and system testing.
