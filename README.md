@@ -32,7 +32,7 @@ This project demonstrates the integration of TouchDesigner and Unreal Engine for
   - Contents of project file(will be uploaded 18/02/2026) [here](https://drive.google.com/drive/folders/1ECqvWOB0zCVJSv94gVGdFEyaLC-d38DC?usp=sharing) downloaded . 
 
 
-# Pre-Reading:
+## Pre-Reading:
 
 The main outcome of this workshop is sending information generated in touchdesinger to unreal engine via artnet in the same way you might send information to an actual light. This allows you to plan, test and design lighting systems before actually having access to the lights. We're simulating everything as accurately as possible, to avoid hiccups when its time to get physical.
 
@@ -58,8 +58,12 @@ just keep this in mind and you'll be so fine! trust only the numbers,the meaning
 
 now that you know what the hell dmx even is , *we're going to use touchdesinger to send the the raw-ahh dmx, and we use virtual devices in unreal engine to make sure that dmx is doing things which we expect, just like it would IRL*
 
-  
-# Instrucitons:
+about the project file: This workshop project file is a modified version of the incred [DMX Sample Project created by Moment Factory  ](https://www.fab.com/listings/5ce617bc-b926-4db5-936b-a0733a5da72d). It is an incredible resource and shows the capability of unreal engine as a fully featured pre-vis environment. It's also very epic, and we don't quite need all the fancy things it provides. I have stripped it back to the really juicy bits. **They have done all the hard bits**.
+
+The hardest thing they have done for us, is building the *fixture blueprints*. These blueprints are modular collections of 3D geometry, materials and  lights which have been pre-mapped to DMX inputs (most importantly, complex things, like moving lights with gobos etc.). You can create anything you can think of but its HARD. Don't worry too much about this capability for now, but know that its possible and feel grateful that it has been done for you (thanks!).
+
+ 
+
 
 
  
