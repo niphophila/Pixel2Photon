@@ -1,9 +1,9 @@
 # Pixel2Photon
-Resources for Touch Collective Melbourne/ Altar Space, 2025 Pixel2Photon Workshop
+Resources for Touch Collective Melbourne/ Altar Space, 2026 Pixel2Photon Workshop
 
 *being activley updated before workshop*
 
-16/02/2025: I'll put some resources here to make sure we can make the most of the hour workshop <3
+16/02/2026: I'll put some resources here to make sure we can make the most of the hour workshop <3
 
 Simulated Real-Time Lighting Control: TouchDesigner & Unreal Engine (now kith)
 
