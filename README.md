@@ -28,7 +28,7 @@ This project demonstrates the integration of TouchDesigner and Unreal Engine for
   Software: 
   please please please make sure you have downloaded and installed all software before the workshop (**files are big**!) to make sure you get the most juice out of lemon, esp the unreal engine install and first opening of project file (unreal engine will take a sec to ready the project!).
   - TouchDesigner (2025.32280) [link](https://derivative.ca/release/202532280/73761)
-  - Unreal Engine 5.4. (process [here](https://www.unrealengine.com/en-US/download) if you've already got an epic games account/launcher/unreal engine, just make sure you have 5.4 installed)
+  - Unreal Engine 5.7. (process [here](https://www.unrealengine.com/en-US/download) if you've already got an epic games account/launcher/unreal engine, just make sure you have 5.7 installed)
   - Contents of project file(will be uploaded 18/02/2026) [here](https://drive.google.com/drive/folders/1ECqvWOB0zCVJSv94gVGdFEyaLC-d38DC?usp=sharing) downloaded . 
 
 
