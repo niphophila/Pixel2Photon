@@ -46,9 +46,12 @@ All you need to know is this:
 - Channels control different parameters of a device. What these parameters are, is determined by the device creator. Don't over think this, its important to keep it a bit abstract in the mind, because this protocol is DUMB, like you just shoot numbers at a device. it doesn’t know what they are, they're just numbers.
 - Each channel is numbered and each device get to decide which channels it will 'listen' to. This is the device's address, which is the first channel which that device will use. How many channels the device will listen to after the initial address, is again up to the device/ their creator. Often you will set the address on the actual device (e.g address '1' will receive channel 1).
 
-  lil example
-   a hypothetical light thing can be either red, green or blue, theres a lil control circuit on there which says 'listen for 3 numbers (1,2,3)' and 'my address is 30'. We send it three channels 30,31,32. If we send 30(255) 31(0) 32(0) it will be red!
-  **the fuck around of dmx is making sure the information you send lines up with the functions on the device**
+_  lil example_
+  
+   a hypothetical light thing can be either red, green or blue, theres a lil control circuit on there which says 'listen for 3 numbers (red 1,green 2,blue 3)' and 'my address is 30'. We send it three channels 30,31,32. If we send 30(255) 31(0) 32(0) it will be red!
+   
+  **the fuck around of dmx is making sure the information you send, lines up with the functions on the device**
+  
    for instance, if we make an error and think that the things address is 31, we send 31(255) 32(0) 32(0) (remember its listening for (red(30, green(31) blue(32) it will be green, eiw :(
 
 just keep this in mind and you'll be so fine! trust only the numbers,the meaning of the information we send is lost on the machine mind. 
