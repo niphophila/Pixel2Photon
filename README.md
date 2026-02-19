@@ -165,10 +165,42 @@ Double click on the dmx icon to open the DMX library.
 
 <img width="420" height="351" alt="image" src="https://github.com/user-attachments/assets/c7af24b1-fd35-4ffb-bbb6-9cc33a9bd67b" />
 
-15. We still have that weird first pixel being 127. This is because our line starts at 1, and the pixel lookup has to choose between nothing or the texture at the border. Always make sure your geometry is within those 1,1 bounds! Put a transform pop in between the line and lookup. Set the scale to 0.9 and translate it 0.05 on the y axis. While we're here lets animate the ramp, add an lfo CHOP, set it to type:ramp and frequency: 0.1 and reference it in the phase parameter of our ramp TOP.
+15. We still have that weird first pixel being 127. This is because our line starts at 1, and the pixel lookup has to choose between nothing or the texture at the border. Always make sure your geometry is well within those x1,y1 bounds! Put a transform pop in between the line and lookup. Set the scale to 0.9 and translate it 0.05 on the y axis. You could fix this 10000 ways but this works for now! While we're here lets animate the ramp, add an lfo CHOP, set it to type:ramp and frequency: 0.1 and reference it in the phase parameter of our ramp TOP. Feel free to plug whatever TOP you want into that null :)
 
-Now go back to your light in unreal engine, aye nice! reap the dopamine!
+Now go back to your light in unreal engine, it should be perfecto! aye nice! reap the dopamine! 
 
 tbc....
 
+16. Now that we've mastered a strip of LED's, we can apply these same techniques to any parameter of any other fixture profile. For instance, if you take a look at the other light in the project you'll see that it is 'listening' for 13 channels, 
+- 01: Pan *you'l notice that the next channel is 3, this is because Pan is a 16 bit parameter meaning that it listens to the combination of two channels (1*2), this gives greater resolution in the value allowing the light to move with more precision!
+- 02: Pan (again, cos 16bit)
+- 03: Tilt 
+- 04: Tilt *also 16bit*
+- 05: Red
+- 06: Green
+- 07: Blue
+- 08: Colour *preset colours*
+- 09: Gobo *cool patterns*
+- 10: Frost *its like blurry edges for gobo*
+- 11: Zoom *makes the beam wider/smaller
+- 12: Shutter *strobe/physical shutter*
+- 13: Dimmer *brightness!*
+ 
 <img width="1815" height="1066" alt="image" src="https://github.com/user-attachments/assets/bf613e99-ecd1-4fd9-aad4-19a109d6167a" />
+
+These are classic parameters you'd find on a moving light, but its important to note that nothing is really standard. Each device will have its own fuctions, and channels and channel order etc. If you're trying to replicate a physical device you want to work with, you can re-map a fixture blueprint in unreal engine to match up (at least, more closley). You can find the fixture definitions for real-world devices in the manual, on device creator websites or the beautiful [GTDF Share database](https://gdtf-share.com/). A GTDF file is everything you need to program a light, there are even tools starting to appear to import these into unreal/TD! I'll try demonstrate this at the end! 
+
+<img width="3021" height="2393" alt="image" src="https://github.com/user-attachments/assets/f5ffb61c-5037-4c4a-ad77-e66bd15566d1" />
+
+So, lets create the control system for this in touchdesinger. Go back to TD and create a new point POP. This point represents out moving Create 8 attributes and name them:
+
+- 01: Pan , set to 16bit
+- 02: Tilt , set to 16bit
+- 03: ColourWheel
+- 04: GoboWheel 
+- 05: Frost 
+- 06: Zoom 
+- 07: Shutter 
+- 08: Dimmer
+
+Copy the texture map pop and DMX fixture pop
