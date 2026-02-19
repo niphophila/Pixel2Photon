@@ -69,7 +69,11 @@ The hardest thing they have done for us, is building the *fixture blueprints*. T
     
 <img width="316" height="83" alt="image" src="https://github.com/user-attachments/assets/79304c98-7da9-4d32-aa4e-7a9b7f163a69" />
 
-3. Unreal Editor will open, you'll see a mars looking place with some objects in the viewport (idk what its actually called) on the left, with the 'outliner' on the right showing you everything in the level. For now, dont go clicking on heaps of stuff. Here's how you get around:
+3. Unreal Editor will open, you'll see a mars looking place with some objects in the viewport (idk what its actually called) on the left, with the 'outliner' on the right showing you everything in the level. For now, dont go clicking on heaps of stuff. If its really running badly, try reduce the viewport quality to low. the icon is top right of viewport.
+
+ <img width="1048" height="779" alt="image" src="https://github.com/user-attachments/assets/2a88e596-ab1c-4ce4-9347-49216eb36ae1" />
+
+5. Here's how you get around:
    
 <img width="2461" height="1392" alt="image" src="https://github.com/user-attachments/assets/62104f8d-89c8-4259-b2b8-460c83d1193f" />
 
@@ -194,13 +198,33 @@ These are classic parameters you'd find on a moving light, but its important to 
 
 So, lets create the control system for this in touchdesinger. Go back to TD and create a new point POP. This point represents out moving Create 8 attributes and name them:
 
-- 01: Pan , set to 16bit
-- 02: Tilt , set to 16bit
-- 03: ColourWheel
-- 04: GoboWheel 
-- 05: Frost 
-- 06: Zoom 
-- 07: Shutter 
-- 08: Dimmer
+- 00: Pan
+- 01: Tilt
+- 02: ColourWheel
+- 03: GoboWheel 
+- 04: Frost 
+- 05: Zoom 
+- 06: Shutter 
+- 07: Dimmer
 
-Copy the texture map pop and DMX fixture pop
+<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/b0f94016-4773-4c0e-b2ba-9f00b7dfc483" />
+
+Copy and paste the lookup texture pop from the LED bar, and connect the point POP to it. Create a DMX fixture POP and connect the lookup texture. Finally create a dmx fixture POP and connect the lookup texture. Name it something steezy, like 'movingHead'. Set universe to 1 and channel to 1 (remember!). On the DMX profile tab, we need to map our point attributes into the dmx channels , and addd our texture lookup.  Add channels by clicking the DMX Channel +
+
+- 00: Pan: set value resolution to 16 bit, select the Pan attribute
+- 01: Tilt:  set value resolution to 16 bit, select the Tilt attribute
+- 02: RGB: set attribute to Color(0) Color(1) Color(2)
+- 03: ColourWheel: select the corresponding attribute for the rest
+- 03: GoboWheel 
+- 04: Frost 
+- 05: Zoom 
+- 06: Shutter 
+- 07: Dimmer
+  
+<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/91b292b4-eafa-4afe-a9aa-6463940f57dd" />
+
+finally, on your DMX out POP , add a another Fixture under the fixtures tab and reference the movingHead dmx fixture pop you just made!
+
+<img width="1720" height="1392" alt="image" src="https://github.com/user-attachments/assets/adbe03ac-2a43-4c08-bdd5-f0af2619f485" />
+
+now go back to your project, you should see the moving head lighting up with your ramp :) NICE if you go back to TD, under your moving head point POP, under the points tab, you can control the light! put TD on one side and unreal on the other, and play with the cool robot light! Try changing the Top texture inputs, and try mapping textures to other attributes (crazy)!
